@@ -3,7 +3,7 @@
 [![Travis](https://img.shields.io/travis/bluecap-se/a9d9969521233042c69706c5695c1f23.svg)](https://travis-ci.org/bluecap-se/a9d9969521233042c69706c5695c1f23)
 ![Status](https://img.shields.io/badge/status-stable-brightgreen.svg)
 ![PyPI - Python Version](https://img.shields.io/badge/python-3.7-blue.svg)
-![Platform](https://img.shields.io/badge/platform-osx-lightgrey.svg)
+![Platform](https://img.shields.io/badge/platform-docker-lightgrey.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Install and run
