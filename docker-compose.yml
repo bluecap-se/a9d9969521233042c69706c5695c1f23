@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+    web:
+        build: ./
+        container_name: poker_app
+        restart: always
+        ports:
+            - "8000:8000"
+        environment:
+            - DJANGO_DEBUG=True
+        command: ["runserver"]
+
+
+networks:
+    default:
+        driver: bridge
