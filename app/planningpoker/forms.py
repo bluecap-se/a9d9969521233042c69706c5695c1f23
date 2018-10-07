@@ -5,7 +5,7 @@ class CreatePollForm(forms.Form):
     name = forms.CharField(
         required=True,
         label='Name',
-        widget=forms.URLInput(attrs={
+        widget=forms.TextInput(attrs={
             'placeholder': 'Poll name',
             'autofocus': True,
             'class': 'form-control',
@@ -15,7 +15,7 @@ class CreatePollForm(forms.Form):
     username = forms.CharField(
         required=True,
         label='Username',
-        widget=forms.PasswordInput(attrs={
+        widget=forms.TextInput(attrs={
             'placeholder': 'Your name',
             'class': 'form-control',
         })

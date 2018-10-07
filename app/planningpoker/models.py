@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+
+class Poll(models.Model):
+    name = models.CharField(max_length=256)
+    username = models.URLField(max_length=256)
+    created = models.DateTimeField(auto_now=True)
