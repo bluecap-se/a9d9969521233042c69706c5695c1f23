@@ -3,8 +3,8 @@ from django.conf.urls import url
 from . import views
 
 
-app_name = 'minime'
+app_name = 'planningpoker'
 
 urlpatterns = [
-    url(r'^$', views.index, name='home'),
+    url(r'^$', views.create_poll, name='create-poll'),
 ]
