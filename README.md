@@ -29,4 +29,4 @@ $ docker exec poker_app python manage.py test
 
 ## License
 
-Published under [MIT License](https://github.com/bluecap-se/a9d9969521233042c69706c5695c1f23/develop/LICENSE).
+Published under [MIT License](https://github.com/bluecap-se/a9d9969521233042c69706c5695c1f23/blob/develop/LICENSE).
