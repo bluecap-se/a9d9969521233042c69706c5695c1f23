@@ -18,9 +18,23 @@
 
     <link rel="stylesheet" href="{% static "styles/main.css" %}" />
 </head>
-<body>
+<body class="text-center">
 
-{% block content %}{% endblock %}
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">Planning Poker</h3>
+            </div>
+        </header>
+
+        {% block content %}{% endblock %}
+
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            </div>
+        </footer>
+    </div>
 
 {% block scripts %}{% endblock %}
 

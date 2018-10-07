@@ -7,4 +7,5 @@ app_name = 'planningpoker'
 
 urlpatterns = [
     url(r'^$', views.create_poll, name='create-poll'),
+    url(r'^save-poll$', views.create_poll_do, name='save-poll'),
 ]
