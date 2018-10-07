@@ -1,2 +1,2 @@
-release: python manage.py migrate --noinput && python manage.py compilestatic --delete-stale-files
+release: python manage.py migrate --noinput
 web: gunicorn app.wsgi
