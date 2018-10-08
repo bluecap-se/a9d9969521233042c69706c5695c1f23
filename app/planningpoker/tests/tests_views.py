@@ -37,3 +37,20 @@ class ViewCreatePollDoTestCase(TestCase):
 
         self.assertEqual(models.Poll.objects.count(), 1)
         self.assertEqual(models.Poll.objects.all()[0].name, poll_name)
+
+
+class ViewViewPollTestCase(TestCase):
+
+    def setUp(self):
+        self.client = Client()
+
+    def test_view_wrong_id(self):
+        response = self.client.get(reverse('planningpoker:view-poll', kwargs=dict(id=1)))
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_view_should_pass(self):
+        obj = models.Poll(name='abc', username='Olle')
+        obj.save()
+
+        response = self.client.get(reverse('planningpoker:view-poll', kwargs=dict(id=obj.id)))
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
