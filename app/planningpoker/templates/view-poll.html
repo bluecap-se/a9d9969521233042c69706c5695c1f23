@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}: View poll{% endblock %}
+
+{% block content %}
+
+    <main role="main" class="inner cover">
+        <h1 class="cover-heading">Poll votes</h1>
+        <p class="lead">Cast your vote on <i>{{ poll.name }}</i>:</p>
+
+        <form id="formCastVote" class="lead" action="{% url 'planningpoker:cast-vote' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="poll" value="{{ poll.id }}">
+
+            <article class="panel">
+                <div class="form-item form-label-group">
+                    {{ form.username }}
+                </div>
+
+                <div class="form-item form-label-group">
+                    <select name="vote" class="form-control">
+                        {% for num in vote_options %}
+                        <option value="{{ num }}">{{ num }} points</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <button class="form-item btn btn-lg btn-primary btn-block" type="submit">Vote</button>
+            </article>
+        </form>
+
+        <br><h3 class="cover-heading">The other participants voted:</h3>
+        <div id="participantsContainer" class="lead"><i>No votes yet</i></div>
+    </main>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>var pollId = '{{ poll.id }}';</script>
+    <script src="{% static "scripts/main.js" %}"></script>
+{% endblock %}

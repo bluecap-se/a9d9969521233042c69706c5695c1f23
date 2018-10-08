@@ -1,7 +1,7 @@
 from django import forms
 
 
-class CreatePollForm(forms.Form):
+class PollForm(forms.Form):
     name = forms.CharField(
         required=True,
         label='Name',
@@ -16,6 +16,7 @@ class CreatePollForm(forms.Form):
         required=True,
         label='Username',
         widget=forms.TextInput(attrs={
+            'id': 'usernameInput',
             'placeholder': 'Your name',
             'class': 'form-control',
         })
