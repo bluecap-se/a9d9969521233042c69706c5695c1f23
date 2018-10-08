@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}: Poll created{% endblock %}
+
+{% block content %}
+
+    <main role="main" class="inner cover">
+        <h1 class="cover-heading">'{{ poll.name }}' poll is created</h1>
+        <p class="lead">You can access it and share it on:</p>
+        <p class="lead"><a href="{{ url }}" title="View poll">{{ url }}</a></p>
+    </main>
+
+{% endblock %}

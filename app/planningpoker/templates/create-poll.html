@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}: Create poll{% endblock %}
+
+{% block content %}
+
+    <main role="main" class="inner cover">
+        <h1 class="cover-heading">Create a new poll</h1>
+        <form id="formCreatePoll" class="lead" action="{% url 'planningpoker:save-poll' %}" method="post">
+            {% csrf_token %}
+
+            <article class="panel">
+                <div class="form-item form-label-group">
+                    {{ form.name }}
+                </div>
+
+                <div class="form-item form-label-group">
+                    {{ form.username }}
+                </div>
+
+                <button class="form-item btn btn-lg btn-primary btn-block" type="submit">Create</button>
+            </article>
+        </form>
+    </main>
+
+{% endblock %}
